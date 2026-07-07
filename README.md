@@ -52,10 +52,33 @@ const SITE_CONFIG = {
 
 ### Déploiement GitHub Pages
 
-1. Poussez le code sur GitHub
+Le site est **100 % statique** (HTML/CSS/JS) et prêt pour GitHub Pages.
+
+#### Option 1 — Déploiement automatique (recommandé)
+
+1. Fusionnez le code sur la branche `main`
 2. Allez dans **Settings → Pages**
-3. Source : branche `main`, dossier `/ (root)`
-4. Mettez à jour les URLs dans `sitemap.xml`, `robots.txt` et les balises `canonical`/`og:url`
+3. Sous **Build and deployment**, choisissez **Source : GitHub Actions**
+4. Le workflow `.github/workflows/deploy.yml` déploie automatiquement à chaque push sur `main`
+
+**URL du site :** https://mrben509.github.io/Data-Analytics-/
+
+#### Option 2 — Déploiement manuel
+
+1. Allez dans **Settings → Pages**
+2. Source : branche `main`, dossier `/ (root)`
+3. Cliquez sur **Save**
+
+#### Fichiers inclus pour GitHub Pages
+
+- `.nojekyll` — désactive le traitement Jekyll (nécessaire pour les dossiers `_components`, etc.)
+- Chemins relatifs partout (`css/`, `js/`, `images/`) — compatibles avec les URLs de type `username.github.io/repo/`
+- Aucune dépendance de build ni serveur Node requis
+
+#### Après le déploiement
+
+1. Vérifiez l'URL dans `js/config.js` si le nom du dépôt change
+2. Configurez Formspree dans `js/config.js` pour activer l'envoi du formulaire
 
 ## Développement local
 

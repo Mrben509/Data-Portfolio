@@ -7,7 +7,7 @@ const SITE_CONFIG = {
   tagline: 'Transformez vos données en décisions rentables.',
   description:
     'Nous aidons les commerçants et les PME à comprendre leurs ventes, leurs clients et leurs performances grâce à des analyses de données claires et exploitables.',
-  url: 'https://votre-utilisateur.github.io/datavision-analytics',
+  url: 'https://mrben509.github.io/Data-Analytics-',
   email: 'contact@datavision-analytics.fr',
   phone: '+33 1 23 45 67 89',
   linkedin: 'https://www.linkedin.com/company/datavision-analytics',
