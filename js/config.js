@@ -4,9 +4,9 @@
  */
 const SITE_CONFIG = {
   companyName: 'DataVision Analytics',
-  tagline: 'Transformez vos données en décisions rentables.',
+  tagline: 'Transformez vos données en bénéfices.',
   description:
-    'Nous aidons les commerçants et les PME à comprendre leurs ventes, leurs clients et leurs performances grâce à des analyses de données claires et exploitables.',
+    'Nous aidons les commerçants et les PME à augmenter leurs ventes, réduire leurs coûts et prendre de meilleures décisions grâce à l\'analyse de leurs données.',
   url: 'https://mrben509.github.io/Data-Analytics-',
   email: 'contact@datavision-analytics.fr',
   phone: '+33 1 23 45 67 89',

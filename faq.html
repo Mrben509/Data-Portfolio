@@ -31,6 +31,31 @@
       <div class="container">
         <div class="accordion reveal">
           <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">Mes données sont-elles sécurisées ?<span class="accordion__icon" data-icon="chevronDown"></span></button>
+            <div class="accordion__content"><div class="accordion__content-inner">Absolument. Vos données ne sont jamais partagées avec des tiers. Nous respectons le RGPD, signons un accord de confidentialité sur demande, et supprimons vos fichiers à la fin de la mission.</div></div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">Combien de temps faut-il pour obtenir des résultats ?<span class="accordion__icon" data-icon="chevronDown"></span></button>
+            <div class="accordion__content"><div class="accordion__content-inner">Un audit express est livré en 48 à 72h. Un tableau de bord complet prend 1 à 2 semaines. Un calendrier précis vous est communiqué dès la validation du devis.</div></div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">Quel format de fichier acceptez-vous ?<span class="accordion__icon" data-icon="chevronDown"></span></button>
+            <div class="accordion__content"><div class="accordion__content-inner">Excel (.xlsx), CSV, exports de caisse, fichiers comptables, PDF. Nous nous adaptons à ce que vous avez déjà — pas besoin de tout restructurer.</div></div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">Faut-il un logiciel particulier ?<span class="accordion__icon" data-icon="chevronDown"></span></button>
+            <div class="accordion__content"><div class="accordion__content-inner">Non. Nous livrons des rapports PDF et des tableaux de bord accessibles depuis votre navigateur. Aucune installation, aucune licence à acheter.</div></div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">Travaillez-vous avec les petites entreprises ?<span class="accordion__icon" data-icon="chevronDown"></span></button>
+            <div class="accordion__content"><div class="accordion__content-inner">C'est notre spécialité. Commerçants, artisans, restaurateurs, PME de 1 à 50 salariés — nous adaptons nos offres à votre taille et votre budget.</div></div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">Puis-je demander une analyse ponctuelle ?<span class="accordion__icon" data-icon="chevronDown"></span></button>
+            <div class="accordion__content"><div class="accordion__content-inner">Oui. L'offre Analyse Express est conçue pour ça : un rapport ponctuel, livré rapidement, sans abonnement ni engagement long terme.</div></div>
+          </div>
+
+          <div class="accordion__item">
             <button class="accordion__trigger" aria-expanded="false">
               À qui s'adressent vos services ?
               <span class="accordion__icon" data-icon="chevronDown"></span>
@@ -155,10 +180,12 @@
 
     <section class="section">
       <div class="container">
-        <div class="cta-section reveal">
-          <h2>Vous avez d'autres questions ?</h2>
-          <p>Notre équipe est disponible pour répondre à toutes vos interrogations.</p>
-          <a href="contact.html" class="btn btn--primary btn--lg">Nous contacter</a>
+        <div class="cta-final reveal">
+          <div class="cta-final__content">
+            <h2>Encore une question ?</h2>
+            <p>Notre équipe vous répond sous 24 heures. Pas de chatbot, pas d'attente.</p>
+            <a href="contact.html" class="btn btn--primary btn--lg">Réserver un appel</a>
+          </div>
         </div>
       </div>
     </section>
@@ -166,14 +193,10 @@
 
   <div id="site-footer"></div>
 
+  <script src="js/counters.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/accordion.js"></script>
   <script src="js/form.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    document.querySelectorAll('[data-icon]').forEach(el => {
-      if (Icons[el.dataset.icon]) el.innerHTML = Icons[el.dataset.icon];
-    });
-  </script>
 </body>
 </html>

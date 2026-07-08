@@ -22,8 +22,8 @@
     <section class="page-header">
       <div class="container reveal">
         <span class="section-label">Contact</span>
-        <h1>Parlons de votre <span class="text-gradient">projet</span></h1>
-        <p>Remplissez le formulaire ci-dessous ou contactez-nous directement. Devis gratuit sous 24 heures.</p>
+        <h1>Demandez votre <span class="text-gradient">audit gratuit</span></h1>
+        <p>Parlons de votre activité. Devis personnalisé sous 24 heures, sans engagement.</p>
       </div>
     </section>
 
@@ -75,7 +75,14 @@
 
           <!-- Formulaire -->
           <div class="contact-form-wrapper reveal reveal-delay-2">
-            <h2 style="margin-bottom: var(--space-xl);">Demander un devis</h2>
+            <div class="contact-trust">
+              <span class="contact-trust__badge"><span data-icon="clock"></span> Réponse sous 24h</span>
+              <span class="contact-trust__badge"><span data-icon="shield"></span> Données confidentielles</span>
+              <span class="contact-trust__badge"><span data-icon="check"></span> Sans engagement</span>
+            </div>
+
+            <h2 style="margin-bottom: var(--space-md);">Demander un audit gratuit</h2>
+            <p style="margin-bottom: var(--space-xl); color: var(--color-text-muted); font-size: 0.9375rem;">Décrivez votre situation en quelques lignes. Nous vous répondons avec un plan d'action personnalisé et un devis transparent.</p>
 
             <form id="contact-form" novalidate>
               <!-- Honeypot anti-spam pour Formspree -->
@@ -111,7 +118,9 @@
                 <span class="form-error" role="alert"></span>
               </div>
 
-              <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Envoyer le message</button>
+              <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Demander mon audit gratuit</button>
+
+              <p style="text-align:center;margin-top:var(--space-md);font-size:0.8125rem;color:var(--color-text-subtle);">🔒 Vos données ne seront jamais partagées. Satisfait ou remboursé sous 14 jours.</p>
 
               <div class="form-success" role="status">
                 Merci pour votre message ! Nous vous répondrons sous 24 heures.
@@ -125,16 +134,12 @@
 
   <div id="site-footer"></div>
 
+  <script src="js/counters.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/accordion.js"></script>
   <script src="js/form.js"></script>
   <script src="js/main.js"></script>
   <script>
-    document.querySelectorAll('[data-icon]').forEach(el => {
-      if (Icons[el.dataset.icon]) el.innerHTML = Icons[el.dataset.icon];
-    });
-
-    // Injection des coordonnées depuis la config
     if (typeof SITE_CONFIG !== 'undefined') {
       const emailEl = document.getElementById('contact-email');
       const phoneEl = document.getElementById('contact-phone');

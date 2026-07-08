@@ -7,4 +7,16 @@ document.addEventListener('DOMContentLoaded', () => {
   initAnimations();
   initAccordion();
   initContactForm();
+  initConversionAnimations();
+  initDashboardDemo();
+  injectIcons();
 });
+
+/** Injecte les icônes SVG dans les éléments [data-icon] */
+function injectIcons() {
+  if (typeof Icons === 'undefined') return;
+  document.querySelectorAll('[data-icon]').forEach((el) => {
+    const icon = el.dataset.icon;
+    if (Icons[icon]) el.innerHTML = Icons[icon];
+  });
+}

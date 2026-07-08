@@ -35,7 +35,7 @@ function renderHeader() {
           <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
             ${Icons.sun}${Icons.moon}
           </button>
-          <a href="contact.html" class="btn btn--primary btn--sm">Demander un devis</a>
+          <a href="contact.html" class="btn btn--primary btn--sm">Audit gratuit</a>
           <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
             ${Icons.menu}
           </button>
