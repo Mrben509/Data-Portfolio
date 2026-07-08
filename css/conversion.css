@@ -178,6 +178,13 @@
   padding: var(--space-md) var(--space-xl);
   background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dashboard-pro__body {
+  padding: var(--space-xl);
+  overflow-x: auto;
 }
 
 .dashboard-pro__filters {

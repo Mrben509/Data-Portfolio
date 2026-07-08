@@ -32,12 +32,20 @@
       <div class="container">
         <div class="contact-grid">
           <div class="reveal">
+            <!-- =========================================================
+                 BLOQUE "DATOS DE CONTACTO" (editable)
+                 - Modifica el email/teléfono/dirección/LinkedIn en:
+                   js/config.js -> SITE_CONFIG.email / phone / address / linkedin
+                 - En esta página, el script al final inyecta esos valores
+                   sobre #contact-email, #contact-phone, #contact-address, #contact-linkedin.
+               ========================================================= -->
             <h2 style="margin-bottom: var(--space-xl);">Nuestros datos de contacto</h2>
 
             <div class="contact-info__item">
               <div class="contact-info__icon" data-icon="mail"></div>
               <div class="contact-info__content">
                 <h4>Email</h4>
+                <!-- Reemplazado dinámicamente por SITE_CONFIG.email -->
                 <a href="mailto:contact@datavision-analytics.fr" id="contact-email">contact@datavision-analytics.fr</a>
               </div>
             </div>
@@ -46,6 +54,7 @@
               <div class="contact-info__icon" data-icon="phone"></div>
               <div class="contact-info__content">
                 <h4>Teléfono</h4>
+                <!-- Reemplazado dinámicamente por SITE_CONFIG.phone -->
                 <a href="tel:+18095550123" id="contact-phone">+1 809 555 0123</a>
               </div>
             </div>
@@ -54,6 +63,7 @@
               <div class="contact-info__icon" data-icon="mapPin"></div>
               <div class="contact-info__content">
                 <h4>Dirección</h4>
+                <!-- Reemplazado dinámicamente por SITE_CONFIG.address -->
                 <p id="contact-address">Santo Domingo, República Dominicana</p>
               </div>
             </div>
@@ -62,6 +72,7 @@
               <div class="contact-info__icon" data-icon="linkedin"></div>
               <div class="contact-info__content">
                 <h4>LinkedIn</h4>
+                <!-- Reemplazado dinámicamente por SITE_CONFIG.linkedin -->
                 <a href="https://www.linkedin.com/company/datavision-analytics" target="_blank" rel="noopener noreferrer" id="contact-linkedin">linkedin.com/company/datavision-analytics</a>
               </div>
             </div>
@@ -85,6 +96,16 @@
 
             <form id="contact-form" novalidate>
               <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+              <!-- =============================
+                   FORMULARIO -> Formspree
+                   =============================
+                   Los datos enviados se llaman:
+                   name, company, email, phone, message
+
+                   Se envían a la URL configurada en:
+                   js/config.js -> SITE_CONFIG.formspreeEndpoint
+                   (si no se configura, el form entra en modo demo).
+              -->
 
               <div class="form-group">
                 <label class="form-label" for="name">Nombre *</label>

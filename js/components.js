@@ -22,7 +22,7 @@ function renderHeader() {
   return `
     <header class="header" id="header">
       <div class="container header__inner">
-        <a href="index.html" class="logo" aria-label="${SITE_CONFIG.companyName} — Accueil">
+        <a href="index.html" class="logo" aria-label="${SITE_CONFIG.companyName} — Inicio">
           <span class="logo__icon">${Icons.logo}</span>
           <span class="logo__text">${SITE_CONFIG.companyName}</span>
         </a>
@@ -32,11 +32,11 @@ function renderHeader() {
         </nav>
 
         <div class="header__actions">
-          <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
             ${Icons.sun}${Icons.moon}
           </button>
-          <a href="contact.html" class="btn btn--primary btn--sm">Audit gratuit</a>
-          <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+          <a href="contact.html" class="btn btn--primary btn--sm">Auditoría gratuita</a>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Menú" aria-expanded="false">
             ${Icons.menu}
           </button>
         </div>
@@ -67,42 +67,42 @@ function renderFooter() {
               <span class="logo__icon">${Icons.logo}</span>
               <span class="logo__text">${SITE_CONFIG.companyName}</span>
             </a>
-            <p>Transformez vos données commerciales en décisions stratégiques concrètes et rentables.</p>
+            <p>Transforma tus datos comerciales en decisiones estratégicas claras y rentables.</p>
             <div class="footer__social">${socialLinks}</div>
           </div>
 
           <div class="footer__links">
-            <h4 class="footer__title">Navigation</h4>
+            <h4 class="footer__title">Navegación</h4>
             ${navLinks}
           </div>
 
           <div class="footer__links">
-            <h4 class="footer__title">Services</h4>
-            <a href="services.html">Analyse des ventes</a>
-            <a href="services.html">Tableaux de bord</a>
-            <a href="services.html">Prévisions</a>
-            <a href="tarifs.html">Tarifs</a>
+            <h4 class="footer__title">Servicios</h4>
+            <a href="services.html#analyse-ventes">Análisis de ventas</a>
+            <a href="services.html#tableau-bord">Tableros personalizados</a>
+            <a href="services.html#previsions">Predicciones de ventas</a>
+            <a href="tarifs.html">Precios</a>
           </div>
 
           <div class="footer__links">
-            <h4 class="footer__title">Contact</h4>
+            <h4 class="footer__title">Contacto</h4>
             <a href="mailto:${SITE_CONFIG.email}">${SITE_CONFIG.email}</a>
             <a href="tel:${SITE_CONFIG.phone.replace(/\s/g, '')}">${SITE_CONFIG.phone}</a>
-            <a href="contact.html">Formulaire de contact</a>
+            <a href="contact.html">Formulario de contacto</a>
           </div>
         </div>
 
         <div class="footer__bottom">
-          <p>&copy; ${SITE_CONFIG.year} ${SITE_CONFIG.companyName}. Tous droits réservés.</p>
+          <p>&copy; ${SITE_CONFIG.year} ${SITE_CONFIG.companyName}. Todos los derechos reservados.</p>
           <div class="footer__legal">
-            <a href="mentions-legales.html">Mentions légales</a>
-            <a href="politique-confidentialite.html">Politique de confidentialité</a>
+            <a href="mentions-legales.html">Aviso legal</a>
+            <a href="politique-confidentialite.html">Política de privacidad</a>
           </div>
         </div>
       </div>
     </footer>
 
-    <button class="back-to-top" id="back-to-top" aria-label="Retour en haut">
+    <button class="back-to-top" id="back-to-top" aria-label="Volver arriba">
       ${Icons.arrowUp}
     </button>
   `;

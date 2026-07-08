@@ -1,28 +1,32 @@
 /**
- * Configuration centrale du site — modifiez ces valeurs pour personnaliser l'entreprise.
- * Tous les textes dynamiques et liens de contact sont centralisés ici.
+ * Configuration centrale du site.
+ * ✅ Personnalisez ici le nom, la navigation et surtout TOUT le bloc CONTACT.
  */
 const SITE_CONFIG = {
   companyName: 'DataVision Analytics',
-  tagline: 'Transformez vos données en bénéfices.',
+  tagline: 'Transforma tus datos en beneficios.',
   description:
-    'Nous aidons les commerçants et les PME à augmenter leurs ventes, réduire leurs coûts et prendre de meilleures décisions grâce à l\'analyse de leurs données.',
+    'Ayudamos a comerciantes y pymes a aumentar sus ventas, reducir costos y tomar mejores decisiones mediante análisis de datos claros y accionables.',
   url: 'https://mrben509.github.io/Data-Analytics-',
+  // =========================
+  // CONTACT (fácil de editar)
+  // =========================
   email: 'contact@datavision-analytics.fr',
-  phone: '+33 1 23 45 67 89',
+  // Formato recomendado: +1 809 ... (República Dominicana)
+  phone: '+1 809 555 0123',
   linkedin: 'https://www.linkedin.com/company/datavision-analytics',
-  address: '12 rue de l\'Innovation, 75002 Paris',
+  address: 'Santo Domingo, República Dominicana',
   formspreeEndpoint: 'https://formspree.io/f/VOTRE_ID',
   year: new Date().getFullYear(),
 
   navigation: [
-    { label: 'Accueil', href: 'index.html' },
-    { label: 'Services', href: 'services.html' },
-    { label: 'Pourquoi nous', href: 'pourquoi-nous.html' },
-    { label: 'Réalisations', href: 'realisations.html' },
-    { label: 'Tarifs', href: 'tarifs.html' },
+    { label: 'Inicio', href: 'index.html' },
+    { label: 'Servicios', href: 'services.html' },
+    { label: 'Por qué nosotros', href: 'pourquoi-nous.html' },
+    { label: 'Realizaciones', href: 'realisations.html' },
+    { label: 'Precios', href: 'tarifs.html' },
     { label: 'FAQ', href: 'faq.html' },
-    { label: 'Contact', href: 'contact.html' },
+    { label: 'Contacto', href: 'contact.html' },
   ],
 
   social: [

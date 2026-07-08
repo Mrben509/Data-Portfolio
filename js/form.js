@@ -7,27 +7,27 @@ const VALIDATION_RULES = {
   name: {
     required: true,
     minLength: 2,
-    message: 'Veuillez entrer votre nom (minimum 2 caractères).',
+    message: 'Por favor, escribe tu nombre (mínimo 2 caracteres).',
   },
   company: {
     required: false,
     minLength: 2,
-    message: 'Le nom de l\'entreprise doit contenir au moins 2 caractères.',
+    message: 'El nombre de la empresa debe tener al menos 2 caracteres.',
   },
   email: {
     required: true,
     pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-    message: 'Veuillez entrer une adresse email valide.',
+    message: 'Por favor, escribe un email válido.',
   },
   phone: {
     required: false,
     pattern: /^[\d\s+().-]{8,}$/,
-    message: 'Veuillez entrer un numéro de téléphone valide.',
+    message: 'Por favor, escribe un número de teléfono válido.',
   },
   message: {
     required: true,
     minLength: 10,
-    message: 'Votre message doit contenir au moins 10 caractères.',
+    message: 'Tu mensaje debe tener al menos 10 caracteres.',
   },
 };
 
@@ -39,7 +39,7 @@ function validateField(name, value) {
   const trimmed = value.trim();
 
   if (rules.required && !trimmed) {
-    return 'Ce champ est obligatoire.';
+        return 'Este campo es obligatorio.';
   }
 
   if (!trimmed && !rules.required) return null;
@@ -75,7 +75,14 @@ function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
-  // Configure l'action Formspree si disponible
+  // ==========================================================
+  // Formspree (envío del formulario)
+  // - Se configura desde js/config.js -> SITE_CONFIG.formspreeEndpoint
+  // - Si el endpoint NO está configurado (contiene 'VOTRE_ID'),
+  //   el formulario funciona en modo demo (solo muestra éxito).
+  // - Los campos enviados se basan en el formulario:
+  //   name, company, email, phone, message (+ honeypot _gotcha)
+  // ==========================================================
   if (SITE_CONFIG.formspreeEndpoint && !SITE_CONFIG.formspreeEndpoint.includes('VOTRE_ID')) {
     form.action = SITE_CONFIG.formspreeEndpoint;
     form.method = 'POST';
@@ -115,10 +122,10 @@ function initContactForm() {
     const successEl = form.querySelector('.form-success');
     const submitBtn = form.querySelector('[type="submit"]');
 
-    // Envoi via Formspree si configuré
+    // Envío vía Formspree si está configurado
     if (form.action && !form.action.includes('VOTRE_ID')) {
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Envoi en cours...';
+      submitBtn.textContent = 'Enviando...';
 
       try {
         const response = await fetch(form.action, {
@@ -132,13 +139,13 @@ function initContactForm() {
           successEl.classList.add('visible');
           setTimeout(() => successEl.classList.remove('visible'), 5000);
         } else {
-          alert('Une erreur est survenue. Veuillez réessayer ou nous contacter par email.');
+          alert('Ocurrió un error. Por favor, inténtalo de nuevo o contáctanos por email.');
         }
       } catch {
-        alert('Impossible d\'envoyer le message. Vérifiez votre connexion.');
+        alert('No se pudo enviar el mensaje. Verifica tu conexión.');
       } finally {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Envoyer le message';
+        submitBtn.textContent = 'Enviar el mensaje';
       }
     } else {
       // Mode démo sans Formspree

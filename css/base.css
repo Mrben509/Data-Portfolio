@@ -22,6 +22,8 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg);
   min-height: 100vh;
+  /* Évite les défilements horizontaux sur mobile si un composant déborde légèrement. */
+  overflow-x: clip;
   transition: background-color var(--transition-base), color var(--transition-base);
 }
 
@@ -87,11 +89,22 @@ p {
 }
 
 /* Layout */
+.header__actions .btn--primary.btn--sm {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header__actions .btn--primary.btn--sm {
+    display: inline-flex;
+  }
+}
+
 .container {
   width: 100%;
   max-width: var(--container-max);
   margin-inline: auto;
   padding-inline: var(--space-lg);
+  overflow-x: clip;
 }
 
 .section {
