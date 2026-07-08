@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contactez DataVision Analytics pour un devis gratuit. Analyse de données pour commerçants et PME. Formulaire, email et téléphone.">
+  <meta property="og:title" content="Contact — DataVision Analytics">
+  <meta property="og:description" content="Demandez votre devis gratuit pour une analyse de données personnalisée.">
+  <title>Contact — DataVision Analytics</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="canonical" href="https://mrben509.github.io/Data-Analytics-/contact.html">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/config.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-header">
+      <div class="container reveal">
+        <span class="section-label">Contact</span>
+        <h1>Parlons de votre <span class="text-gradient">projet</span></h1>
+        <p>Remplissez le formulaire ci-dessous ou contactez-nous directement. Devis gratuit sous 24 heures.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Informations de contact -->
+          <div class="reveal">
+            <h2 style="margin-bottom: var(--space-xl);">Nos coordonnées</h2>
+
+            <div class="contact-info__item">
+              <div class="contact-info__icon" data-icon="mail"></div>
+              <div class="contact-info__content">
+                <h4>Email</h4>
+                <a href="mailto:contact@datavision-analytics.fr" id="contact-email">contact@datavision-analytics.fr</a>
+              </div>
+            </div>
+
+            <div class="contact-info__item">
+              <div class="contact-info__icon" data-icon="phone"></div>
+              <div class="contact-info__content">
+                <h4>Téléphone</h4>
+                <a href="tel:+33123456789" id="contact-phone">+33 1 23 45 67 89</a>
+              </div>
+            </div>
+
+            <div class="contact-info__item">
+              <div class="contact-info__icon" data-icon="mapPin"></div>
+              <div class="contact-info__content">
+                <h4>Adresse</h4>
+                <p id="contact-address">12 rue de l'Innovation, 75002 Paris</p>
+              </div>
+            </div>
+
+            <div class="contact-info__item">
+              <div class="contact-info__icon" data-icon="linkedin"></div>
+              <div class="contact-info__content">
+                <h4>LinkedIn</h4>
+                <a href="https://www.linkedin.com/company/datavision-analytics" target="_blank" rel="noopener noreferrer" id="contact-linkedin">linkedin.com/company/datavision-analytics</a>
+              </div>
+            </div>
+
+            <div class="card" style="margin-top: var(--space-xl);">
+              <h3 style="font-size: 1rem; margin-bottom: var(--space-sm);">Horaires</h3>
+              <p>Lundi — Vendredi : 9h00 — 18h00</p>
+              <p style="margin-top: var(--space-sm);">Réponse sous 24h ouvrées</p>
+            </div>
+          </div>
+
+          <!-- Formulaire -->
+          <div class="contact-form-wrapper reveal reveal-delay-2">
+            <h2 style="margin-bottom: var(--space-xl);">Demander un devis</h2>
+
+            <form id="contact-form" novalidate>
+              <!-- Honeypot anti-spam pour Formspree -->
+              <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+              <div class="form-group">
+                <label class="form-label" for="name">Nom *</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Votre nom" required autocomplete="name">
+                <span class="form-error" role="alert"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="company">Entreprise</label>
+                <input type="text" id="company" name="company" class="form-input" placeholder="Nom de votre entreprise" autocomplete="organization">
+                <span class="form-error" role="alert"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="email">Email *</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="votre@email.com" required autocomplete="email">
+                <span class="form-error" role="alert"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="phone">Téléphone</label>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+33 6 12 34 56 78" autocomplete="tel">
+                <span class="form-error" role="alert"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="message">Message *</label>
+                <textarea id="message" name="message" class="form-textarea" placeholder="Décrivez votre projet, vos objectifs et les données dont vous disposez..." required></textarea>
+                <span class="form-error" role="alert"></span>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Envoyer le message</button>
+
+              <div class="form-success" role="status">
+                Merci pour votre message ! Nous vous répondrons sous 24 heures.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/animations.js"></script>
+  <script src="js/accordion.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('[data-icon]').forEach(el => {
+      if (Icons[el.dataset.icon]) el.innerHTML = Icons[el.dataset.icon];
+    });
+
+    // Injection des coordonnées depuis la config
+    if (typeof SITE_CONFIG !== 'undefined') {
+      const emailEl = document.getElementById('contact-email');
+      const phoneEl = document.getElementById('contact-phone');
+      const addressEl = document.getElementById('contact-address');
+      const linkedinEl = document.getElementById('contact-linkedin');
+
+      if (emailEl) {
+        emailEl.href = 'mailto:' + SITE_CONFIG.email;
+        emailEl.textContent = SITE_CONFIG.email;
+      }
+      if (phoneEl) {
+        phoneEl.href = 'tel:' + SITE_CONFIG.phone.replace(/\s/g, '');
+        phoneEl.textContent = SITE_CONFIG.phone;
+      }
+      if (addressEl) addressEl.textContent = SITE_CONFIG.address;
+      if (linkedinEl) linkedinEl.href = SITE_CONFIG.linkedin;
+    }
+  </script>
+</body>
+</html>

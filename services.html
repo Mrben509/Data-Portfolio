@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Découvrez nos services d'analyse de données : ventes, tableaux de bord, prévisions, stocks et conseils stratégiques pour PME et commerçants.">
+  <meta property="og:title" content="Nos Services — DataVision Analytics">
+  <meta property="og:description" content="Analyse des ventes, tableaux de bord personnalisés, prévisions et automatisation de rapports.">
+  <meta property="og:type" content="website">
+  <title>Nos Services — DataVision Analytics</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="canonical" href="https://mrben509.github.io/Data-Analytics-/services.html">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/config.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-header">
+      <div class="container reveal">
+        <span class="section-label">Services</span>
+        <h1>Des solutions data <span class="text-gradient">sur mesure</span></h1>
+        <p>De l'analyse ponctuelle à l'accompagnement stratégique, nous transformons vos données en leviers de croissance concrets.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card-grid">
+          <div class="card service-card reveal" id="analyse-ventes">
+            <div class="card__icon" data-icon="chart"></div>
+            <h3>Analyse des ventes</h3>
+            <p>Obtenez une vision claire de vos performances commerciales : tendances, saisonnalité, produits stars et points faibles. Nos rapports détaillés vous permettent d'identifier rapidement les opportunités de croissance et d'optimiser votre mix produit.</p>
+            <a href="contact.html" class="btn btn--secondary btn--sm">En savoir plus</a>
+          </div>
+
+          <div class="card service-card reveal reveal-delay-1" id="tableau-bord">
+            <div class="card__icon" data-icon="dashboard"></div>
+            <h3>Tableau de bord personnalisé</h3>
+            <p>Visualisez vos indicateurs clés en temps réel sur une interface intuitive conçue spécifiquement pour votre activité. Suivez votre chiffre d'affaires, vos marges et vos performances sans compétences techniques.</p>
+            <a href="contact.html" class="btn btn--secondary btn--sm">En savoir plus</a>
+          </div>
+
+          <div class="card service-card reveal reveal-delay-2" id="previsions">
+            <div class="card__icon" data-icon="forecast"></div>
+            <h3>Prévisions de ventes</h3>
+            <p>Anticipez la demande grâce à des modèles prédictifs basés sur vos données historiques. Planifiez vos achats, votre production et vos ressources avec confiance pour éviter ruptures et surstocks.</p>
+            <a href="contact.html" class="btn btn--secondary btn--sm">En savoir plus</a>
+          </div>
+
+          <div class="card service-card reveal reveal-delay-3">
+            <div class="card__icon" data-icon="package"></div>
+            <h3>Analyse des stocks</h3>
+            <p>Optimisez votre gestion des inventaires avec des analyses de rotation, de couverture et de valorisation. Réduisez les coûts de stockage tout en garantissant la disponibilité de vos produits.</p>
+            <a href="contact.html" class="btn btn--secondary btn--sm">En savoir plus</a>
+          </div>
+
+          <div class="card service-card reveal reveal-delay-4">
+            <div class="card__icon" data-icon="target"></div>
+            <h3>Analyse des performances</h3>
+            <p>Mesurez l'efficacité de chaque canal, campagne et point de vente. Comparez vos résultats dans le temps et par rapport à vos objectifs pour piloter votre activité avec précision.</p>
+            <a href="contact.html" class="btn btn--secondary btn--sm">En savoir plus</a>
+          </div>
+
+          <div class="card service-card reveal reveal-delay-5">
+            <div class="card__icon" data-icon="zap"></div>
+            <h3>Automatisation de rapports</h3>
+            <p>Recevez automatiquement vos rapports hebdomadaires ou mensuels par email. Fini les exports manuels : vos données sont synthétisées et livrées directement dans votre boîte mail.</p>
+            <a href="contact.html" class="btn btn--secondary btn--sm">En savoir plus</a>
+          </div>
+
+          <div class="card service-card reveal reveal-delay-6">
+            <div class="card__icon" data-icon="eye"></div>
+            <h3>Visualisation de données</h3>
+            <p>Transformez vos chiffres en graphiques clairs et impactants. Nos visualisations modernes facilitent la compréhension et la communication de vos résultats à vos équipes et partenaires.</p>
+            <a href="contact.html" class="btn btn--secondary btn--sm">En savoir plus</a>
+          </div>
+
+          <div class="card service-card reveal">
+            <div class="card__icon" data-icon="lightbulb"></div>
+            <h3>Conseils stratégiques basés sur les données</h3>
+            <p>Bénéficiez de recommandations concrètes et actionnables pour améliorer votre rentabilité. Nous traduisons vos données en décisions business claires et priorisées.</p>
+            <a href="contact.html" class="btn btn--secondary btn--sm">En savoir plus</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-section reveal">
+          <h2>Un projet en tête ?</h2>
+          <p>Parlons de vos besoins et trouvons ensemble la solution la plus adaptée à votre activité.</p>
+          <a href="contact.html" class="btn btn--primary btn--lg">Demander un devis</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/animations.js"></script>
+  <script src="js/accordion.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('[data-icon]').forEach(el => {
+      if (Icons[el.dataset.icon]) el.innerHTML = Icons[el.dataset.icon];
+    });
+  </script>
+</body>
+</html>

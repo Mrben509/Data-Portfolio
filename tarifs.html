@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tarifs transparents pour nos services d'analyse de données : Analyse Express, Business et Accompagnement Premium. Devis personnalisé gratuit.">
+  <meta property="og:title" content="Nos Tarifs — DataVision Analytics">
+  <meta property="og:description" content="Trois offres adaptées à chaque besoin : de l'analyse rapide à l'accompagnement premium.">
+  <title>Nos Tarifs — DataVision Analytics</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="canonical" href="https://mrben509.github.io/Data-Analytics-/tarifs.html">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/config.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-header">
+      <div class="container reveal">
+        <span class="section-label">Tarifs</span>
+        <h1>Des offres <span class="text-gradient">transparentes</span></h1>
+        <p>Choisissez la formule adaptée à vos besoins. Chaque offre inclut un accompagnement personnalisé et des livrables de qualité professionnelle.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card-grid" style="max-width: 1000px; margin-inline: auto;">
+          <!-- Analyse Express -->
+          <div class="card pricing-card reveal">
+            <h3>Analyse Express</h3>
+            <p>Idéal pour une première analyse rapide de vos ventes et performances.</p>
+            <div class="pricing-card__price">Sur devis</div>
+            <ul class="pricing-card__features">
+              <li>
+                <span data-icon="check"></span>
+                Rapport PDF professionnel
+              </li>
+              <li>
+                <span data-icon="check"></span>
+                Analyse des ventes
+              </li>
+              <li>
+                <span data-icon="check"></span>
+                Livraison rapide (48-72h)
+              </li>
+              <li>
+                <span data-icon="check"></span>
+                Visualisations claires
+              </li>
+              <li>
+                <span data-icon="check"></span>
+                Recommandations prioritaires
+              </li>
+            </ul>
+            <a href="contact.html" class="btn btn--secondary" style="width:100%;">Demander un devis</a>
+          </div>
+
+          <!-- Analyse Business -->
+          <div class="card pricing-card pricing-card--featured reveal reveal-delay-1">
+            <h3>Analyse Business</h3>
+            <p>L'offre complète pour piloter votre activité avec un tableau de bord sur mesure.</p>
+            <div class="pricing-card__price">Sur devis</div>
+            <ul class="pricing-card__features">
+              <li>
+                <span data-icon="check"></span>
+                Tableau de bord personnalisé
+              </li>
+              <li>
+                <span data-icon="check"></span>
+                Analyse complète multi-dimensionnelle
+              </li>
+              <li>
+                <span data-icon="check"></span>
+                Recommandations stratégiques
+              </li>
+              <li>
+                <span data-icon="check"></span>
+                Rapports automatisés mensuels
+              </li>
+              <li>
+                <span data-icon="check"></span>
+                Support email pendant 30 jours
+              </li>
+            </ul>
+            <a href="contact.html" class="btn btn--primary" style="width:100%;">Demander un devis</a>
+          </div>
+
+          <!-- Accompagnement Premium -->
+          <div class="card pricing-card reveal reveal-delay-2">
+            <h3>Accompagnement Premium</h3>
+            <p>Un partenariat long terme pour transformer durablement votre pilotage data.</p>
+            <div class="pricing-card__price">Sur devis</div>
+            <ul class="pricing-card__features">
+              <li>
+                <span data-icon="check"></span>
+                Tableau de bord avancé
+              </li>
+              <li>
+                <span data-icon="check"></span>
+                Analyse avancée et prédictive
+              </li>
+              <li>
+                <span data-icon="check"></span>
+                Réunion en visioconférence
+              </li>
+              <li>
+                <span data-icon="check"></span>
+                Suivi personnalisé mensuel
+              </li>
+              <li>
+                <span data-icon="check"></span>
+                Accès prioritaire et conseils illimités
+              </li>
+            </ul>
+            <a href="contact.html" class="btn btn--secondary" style="width:100%;">Demander un devis</a>
+          </div>
+        </div>
+
+        <div class="section-header reveal" style="margin-top: var(--space-4xl);">
+          <h2>Questions sur nos tarifs ?</h2>
+          <p>Chaque projet est unique. Contactez-nous pour un devis personnalisé adapté à votre situation.</p>
+          <a href="faq.html" class="btn btn--ghost" style="margin-top: var(--space-md);">Consulter la FAQ →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-section reveal">
+          <h2>Premier devis gratuit et sans engagement</h2>
+          <p>Décrivez-nous votre projet et recevez une proposition détaillée sous 24 heures.</p>
+          <a href="contact.html" class="btn btn--primary btn--lg">Demander un devis</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/animations.js"></script>
+  <script src="js/accordion.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('[data-icon]').forEach(el => {
+      if (Icons[el.dataset.icon]) el.innerHTML = Icons[el.dataset.icon];
+    });
+  </script>
+</body>
+</html>
