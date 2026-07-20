@@ -1,11 +1,10 @@
 /**
  * Validación y envío del formulario de contacto.
- * Los mensajes se envían a SITE_CONFIG.email vía FormSubmit (sin cuenta previa).
- * Endpoint AJAX: https://formsubmit.co/ajax/<email>
+ * Envío vía FormSubmit con el ID activado (más seguro que el email en claro).
  *
- * IMPORTANTE (primera vez):
- * FormSubmit envía un correo de activación a tu bandeja.
- * Debes abrir ese email y confirmar el enlace para recibir los envíos reales.
+ * Cada envío llega a delarobia509@gmail.com con:
+ * - Nombre, Empresa, Email, Teléfono, Mensaje / solicitud
+ * - Reply-To = email del cliente (puedes responder directo)
  */
 
 const VALIDATION_RULES = {
@@ -75,11 +74,41 @@ function showFieldError(field, error) {
   }
 }
 
-/** Endpoint de envío hacia el email de contacto */
+/** Endpoint FormSubmit (ID preferido, email como respaldo) */
 function getFormEndpoint() {
-  const email = (SITE_CONFIG && SITE_CONFIG.email) || '';
-  if (!email || !email.includes('@')) return null;
-  return 'https://formsubmit.co/ajax/' + encodeURIComponent(email);
+  const id = SITE_CONFIG && SITE_CONFIG.formSubmitId;
+  if (id) return 'https://formsubmit.co/ajax/' + encodeURIComponent(id);
+
+  const email = SITE_CONFIG && SITE_CONFIG.email;
+  if (email && email.includes('@')) {
+    return 'https://formsubmit.co/ajax/' + encodeURIComponent(email);
+  }
+  return null;
+}
+
+/** Construye el payload con etiquetas claras en español para el email recibido */
+function buildSubmissionPayload(form) {
+  const name = (form.querySelector('[name="name"]')?.value || '').trim();
+  const company = (form.querySelector('[name="company"]')?.value || '').trim();
+  const email = (form.querySelector('[name="email"]')?.value || '').trim();
+  const phone = (form.querySelector('[name="phone"]')?.value || '').trim();
+  const message = (form.querySelector('[name="message"]')?.value || '').trim();
+
+  const payload = {
+    // Etiquetas visibles en el correo FormSubmit
+    'Nombre del cliente': name,
+    Empresa: company || '—',
+    'Email del cliente': email,
+    Teléfono: phone || '—',
+    'Solicitud / Mensaje': message,
+    // Metadatos FormSubmit
+    _subject: 'Nueva solicitud de auditoría — ' + (name || 'Cliente'),
+    _template: 'table',
+    _captcha: 'false',
+    _replyto: email,
+  };
+
+  return payload;
 }
 
 /** Inicializa el formulario de contacto */
@@ -128,11 +157,7 @@ function initContactForm() {
       return;
     }
 
-    // Metadatos FormSubmit
-    formData.set('_subject', 'Nueva solicitud — DataVision Analytics');
-    formData.set('_template', 'table');
-    formData.set('_captcha', 'false');
-    formData.set('_honey', formData.get('_gotcha') || '');
+    const payload = buildSubmissionPayload(form);
 
     submitBtn.disabled = true;
     submitBtn.textContent = 'Enviando...';
@@ -140,8 +165,11 @@ function initContactForm() {
     try {
       const response = await fetch(endpoint, {
         method: 'POST',
-        body: formData,
-        headers: { Accept: 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(payload),
       });
 
       const data = await response.json().catch(() => ({}));
@@ -151,7 +179,9 @@ function initContactForm() {
         successEl.classList.add('visible');
         setTimeout(() => successEl.classList.remove('visible'), 6000);
       } else {
-        const detail = data.message || 'Ocurrió un error. Por favor, inténtalo de nuevo o escríbenos por email.';
+        const detail =
+          data.message ||
+          'Ocurrió un error. Por favor, inténtalo de nuevo o escríbenos por email.';
         alert(detail);
       }
     } catch {
