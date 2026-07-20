@@ -39,8 +39,8 @@ Modifiez `js/config.js` :
 ```javascript
 const SITE_CONFIG = {
   companyName: 'DataVision Analytics',
-  email: 'contact@datavision-analytics.fr',
-  phone: '+33 1 23 45 67 89',
+  email: 'delarobia509@gmail.com',
+  phone: '+1 849 515 1149',
   // ...
 };
 ```
