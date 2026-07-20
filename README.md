@@ -39,16 +39,20 @@ Modifiez `js/config.js` :
 ```javascript
 const SITE_CONFIG = {
   companyName: 'DataVision Analytics',
-  email: 'contact@datavision-analytics.fr',
-  phone: '+33 1 23 45 67 89',
+  email: 'delarobia509@gmail.com',
+  phone: '+1 849 515 1149',
   // ...
 };
 ```
 
-### Formulaire de contact (Formspree)
+### Formulaire de contact (FormSubmit)
 
-1. Créez un compte sur [formspree.io](https://formspree.io)
-2. Remplacez `formspreeEndpoint` dans `js/config.js` par votre URL Formspree
+Les messages sont envoyés automatiquement à l'email défini dans `js/config.js` (`SITE_CONFIG.email`) via [FormSubmit](https://formsubmit.co).
+
+1. Déployez le site (GitHub Pages)
+2. Remplissez le formulaire une première fois
+3. Ouvrez l'email d'activation reçu dans votre boîte mail et confirmez le lien
+4. Les prochains envois arriveront directement dans votre inbox
 
 ### Déploiement GitHub Pages
 
@@ -78,7 +82,7 @@ Le site est **100 % statique** (HTML/CSS/JS) et prêt pour GitHub Pages.
 #### Après le déploiement
 
 1. Vérifiez l'URL dans `js/config.js` si le nom du dépôt change
-2. Configurez Formspree dans `js/config.js` pour activer l'envoi du formulaire
+2. Confirmez l'email d'activation FormSubmit (voir section formulaire ci-dessus)
 
 ## Développement local
 

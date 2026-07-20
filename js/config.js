@@ -11,12 +11,13 @@ const SITE_CONFIG = {
   // =========================
   // CONTACT (fácil de editar)
   // =========================
-  email: 'contact@datavision-analytics.fr',
-  // Formato recomendado: +1 809 ... (República Dominicana)
-  phone: '+1 809 555 0123',
+  email: 'delarobia509@gmail.com',
+  // Formato recomendado: +1 849 ... (República Dominicana)
+  phone: '+1 849 515 1149',
   linkedin: 'https://www.linkedin.com/company/datavision-analytics',
-  address: 'Santo Domingo, República Dominicana',
-  formspreeEndpoint: 'https://formspree.io/f/VOTRE_ID',
+  address: 'Entrada A Los Conucos, Playa Juan Dolio, República Dominicana',
+  // Los envíos del formulario van a `email` vía FormSubmit (sin API key).
+  // Primera vez: confirma el correo de activación que FormSubmit te envía.
   year: new Date().getFullYear(),
 
   navigation: [

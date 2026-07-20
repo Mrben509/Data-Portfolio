@@ -46,7 +46,7 @@
               <div class="contact-info__content">
                 <h4>Email</h4>
                 <!-- Reemplazado dinámicamente por SITE_CONFIG.email -->
-                <a href="mailto:contact@datavision-analytics.fr" id="contact-email">contact@datavision-analytics.fr</a>
+                <a href="mailto:delarobia509@gmail.com" id="contact-email">delarobia509@gmail.com</a>
               </div>
             </div>
 
@@ -55,7 +55,7 @@
               <div class="contact-info__content">
                 <h4>Teléfono</h4>
                 <!-- Reemplazado dinámicamente por SITE_CONFIG.phone -->
-                <a href="tel:+18095550123" id="contact-phone">+1 809 555 0123</a>
+                <a href="tel:+18495151149" id="contact-phone">+1 849 515 1149</a>
               </div>
             </div>
 
@@ -64,7 +64,7 @@
               <div class="contact-info__content">
                 <h4>Dirección</h4>
                 <!-- Reemplazado dinámicamente por SITE_CONFIG.address -->
-                <p id="contact-address">Santo Domingo, República Dominicana</p>
+                <p id="contact-address">Entrada A Los Conucos, Playa Juan Dolio, República Dominicana</p>
               </div>
             </div>
 
@@ -97,14 +97,16 @@
             <form id="contact-form" novalidate>
               <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
               <!-- =============================
-                   FORMULARIO -> Formspree
+                   FORMULARIO -> FormSubmit
                    =============================
-                   Los datos enviados se llaman:
+                   Campos enviados:
                    name, company, email, phone, message
 
-                   Se envían a la URL configurada en:
-                   js/config.js -> SITE_CONFIG.formspreeEndpoint
-                   (si no se configura, el form entra en modo demo).
+                   Destino: SITE_CONFIG.email (js/config.js)
+                   Servicio: https://formsubmit.co/ajax/<email>
+
+                   Primera vez: abre el email de activación de FormSubmit
+                   en tu bandeja (delarobia509@gmail.com) y confirma el enlace.
               -->
 
               <div class="form-group">
@@ -127,7 +129,7 @@
 
               <div class="form-group">
                 <label class="form-label" for="phone">Teléfono</label>
-                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+1 809 555 1234" autocomplete="tel">
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+1 849 515 1149" autocomplete="tel">
                 <span class="form-error" role="alert"></span>
               </div>
 
