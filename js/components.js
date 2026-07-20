@@ -88,6 +88,7 @@ function renderFooter() {
             <h4 class="footer__title">Contacto</h4>
             <a href="mailto:${SITE_CONFIG.email}">${SITE_CONFIG.email}</a>
             <a href="tel:${SITE_CONFIG.phone.replace(/\s/g, '')}">${SITE_CONFIG.phone}</a>
+            <p style="font-size:0.875rem;color:var(--color-text-muted);margin:0.5rem 0 0;line-height:1.45;">${SITE_CONFIG.address}</p>
             <a href="contact.html">Formulario de contacto</a>
           </div>
         </div>
