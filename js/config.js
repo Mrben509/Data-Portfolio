@@ -16,8 +16,9 @@ const SITE_CONFIG = {
   phone: '+1 849 515 1149',
   linkedin: 'https://www.linkedin.com/company/datavision-analytics',
   address: 'Entrada A Los Conucos, Playa Juan Dolio, República Dominicana',
-  // Los envíos del formulario van a `email` vía FormSubmit (sin API key).
-  // Primera vez: confirma el correo de activación que FormSubmit te envía.
+  // FormSubmit — ID de formulario activado (reemplaza el email en claro)
+  // Cada envío llega a delarobia509@gmail.com con los datos del cliente.
+  formSubmitId: '72e002fb5fb95a4ab8d372608e17b8dd',
   year: new Date().getFullYear(),
 
   navigation: [

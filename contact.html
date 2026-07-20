@@ -97,16 +97,14 @@
             <form id="contact-form" novalidate>
               <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
               <!-- =============================
-                   FORMULARIO -> FormSubmit
+                   FORMULARIO -> FormSubmit (activado)
                    =============================
-                   Campos enviados:
-                   name, company, email, phone, message
+                   Destino: SITE_CONFIG.formSubmitId
+                   Email receptor: SITE_CONFIG.email
 
-                   Destino: SITE_CONFIG.email (js/config.js)
-                   Servicio: https://formsubmit.co/ajax/<email>
-
-                   Primera vez: abre el email de activación de FormSubmit
-                   en tu bandeja (delarobia509@gmail.com) y confirma el enlace.
+                   El correo recibido incluye:
+                   Nombre, Empresa, Email, Teléfono, Solicitud/Mensaje
+                   Reply-To = email del cliente
               -->
 
               <div class="form-group">
