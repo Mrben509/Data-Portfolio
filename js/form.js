@@ -1,6 +1,11 @@
 /**
- * Validation du formulaire de contact côté client
- * Compatible avec Formspree — configurez l'endpoint dans config.js
+ * Validación y envío del formulario de contacto.
+ * Los mensajes se envían a SITE_CONFIG.email vía FormSubmit (sin cuenta previa).
+ * Endpoint AJAX: https://formsubmit.co/ajax/<email>
+ *
+ * IMPORTANTE (primera vez):
+ * FormSubmit envía un correo de activación a tu bandeja.
+ * Debes abrir ese email y confirmar el enlace para recibir los envíos reales.
  */
 
 const VALIDATION_RULES = {
@@ -31,7 +36,7 @@ const VALIDATION_RULES = {
   },
 };
 
-/** Valide un champ individuel */
+/** Valida un campo individual */
 function validateField(name, value) {
   const rules = VALIDATION_RULES[name];
   if (!rules) return null;
@@ -39,7 +44,7 @@ function validateField(name, value) {
   const trimmed = value.trim();
 
   if (rules.required && !trimmed) {
-        return 'Este campo es obligatorio.';
+    return 'Este campo es obligatorio.';
   }
 
   if (!trimmed && !rules.required) return null;
@@ -55,7 +60,7 @@ function validateField(name, value) {
   return null;
 }
 
-/** Affiche ou masque l'erreur d'un champ */
+/** Muestra u oculta el error de un campo */
 function showFieldError(field, error) {
   const group = field.closest('.form-group');
   const errorEl = group.querySelector('.form-error');
@@ -70,25 +75,21 @@ function showFieldError(field, error) {
   }
 }
 
-/** Initialise le formulaire de contact */
+/** Endpoint de envío hacia el email de contacto */
+function getFormEndpoint() {
+  const email = (SITE_CONFIG && SITE_CONFIG.email) || '';
+  if (!email || !email.includes('@')) return null;
+  return 'https://formsubmit.co/ajax/' + encodeURIComponent(email);
+}
+
+/** Inicializa el formulario de contacto */
 function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
-  // ==========================================================
-  // Formspree (envío del formulario)
-  // - Se configura desde js/config.js -> SITE_CONFIG.formspreeEndpoint
-  // - Si el endpoint NO está configurado (contiene 'VOTRE_ID'),
-  //   el formulario funciona en modo demo (solo muestra éxito).
-  // - Los campos enviados se basan en el formulario:
-  //   name, company, email, phone, message (+ honeypot _gotcha)
-  // ==========================================================
-  if (SITE_CONFIG.formspreeEndpoint && !SITE_CONFIG.formspreeEndpoint.includes('VOTRE_ID')) {
-    form.action = SITE_CONFIG.formspreeEndpoint;
-    form.method = 'POST';
-  }
+  const endpoint = getFormEndpoint();
+  const defaultSubmitLabel = form.querySelector('[type="submit"]')?.textContent || 'Enviar';
 
-  // Validation en temps réel au blur
   form.querySelectorAll('.form-input, .form-textarea').forEach((field) => {
     field.addEventListener('blur', () => {
       const error = validateField(field.name, field.value);
@@ -110,7 +111,7 @@ function initContactForm() {
     const formData = new FormData(form);
 
     for (const [name, value] of formData.entries()) {
-      if (name === '_gotcha') continue;
+      if (name.startsWith('_')) continue;
       const error = validateField(name, value);
       const field = form.querySelector(`[name="${name}"]`);
       if (field) showFieldError(field, error);
@@ -122,36 +123,42 @@ function initContactForm() {
     const successEl = form.querySelector('.form-success');
     const submitBtn = form.querySelector('[type="submit"]');
 
-    // Envío vía Formspree si está configurado
-    if (form.action && !form.action.includes('VOTRE_ID')) {
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Enviando...';
+    if (!endpoint) {
+      alert('El formulario no está configurado. Contacta al administrador del sitio.');
+      return;
+    }
 
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { Accept: 'application/json' },
-        });
+    // Metadatos FormSubmit
+    formData.set('_subject', 'Nueva solicitud — DataVision Analytics');
+    formData.set('_template', 'table');
+    formData.set('_captcha', 'false');
+    formData.set('_honey', formData.get('_gotcha') || '');
 
-        if (response.ok) {
-          form.reset();
-          successEl.classList.add('visible');
-          setTimeout(() => successEl.classList.remove('visible'), 5000);
-        } else {
-          alert('Ocurrió un error. Por favor, inténtalo de nuevo o contáctanos por email.');
-        }
-      } catch {
-        alert('No se pudo enviar el mensaje. Verifica tu conexión.');
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Enviar el mensaje';
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (response.ok && data.success !== 'false' && data.success !== false) {
+        form.reset();
+        successEl.classList.add('visible');
+        setTimeout(() => successEl.classList.remove('visible'), 6000);
+      } else {
+        const detail = data.message || 'Ocurrió un error. Por favor, inténtalo de nuevo o escríbenos por email.';
+        alert(detail);
       }
-    } else {
-      // Mode démo sans Formspree
-      form.reset();
-      successEl.classList.add('visible');
-      setTimeout(() => successEl.classList.remove('visible'), 5000);
+    } catch {
+      alert('No se pudo enviar el mensaje. Verifica tu conexión e inténtalo de nuevo.');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = defaultSubmitLabel;
     }
   });
 }

@@ -97,14 +97,16 @@
             <form id="contact-form" novalidate>
               <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
               <!-- =============================
-                   FORMULARIO -> Formspree
+                   FORMULARIO -> FormSubmit
                    =============================
-                   Los datos enviados se llaman:
+                   Campos enviados:
                    name, company, email, phone, message
 
-                   Se envían a la URL configurada en:
-                   js/config.js -> SITE_CONFIG.formspreeEndpoint
-                   (si no se configura, el form entra en modo demo).
+                   Destino: SITE_CONFIG.email (js/config.js)
+                   Servicio: https://formsubmit.co/ajax/<email>
+
+                   Primera vez: abre el email de activación de FormSubmit
+                   en tu bandeja (delarobia509@gmail.com) y confirma el enlace.
               -->
 
               <div class="form-group">

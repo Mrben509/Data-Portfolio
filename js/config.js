@@ -16,7 +16,8 @@ const SITE_CONFIG = {
   phone: '+1 849 515 1149',
   linkedin: 'https://www.linkedin.com/company/datavision-analytics',
   address: 'Entrada A Los Conucos, Playa Juan Dolio, República Dominicana',
-  formspreeEndpoint: 'https://formspree.io/f/VOTRE_ID',
+  // Los envíos del formulario van a `email` vía FormSubmit (sin API key).
+  // Primera vez: confirma el correo de activación que FormSubmit te envía.
   year: new Date().getFullYear(),
 
   navigation: [
