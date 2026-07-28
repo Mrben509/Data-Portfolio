@@ -57,7 +57,7 @@
 /* ─── Problèmes / Solutions ─── */
 .problem-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: var(--space-lg);
 }
 
@@ -126,7 +126,7 @@
 /* ─── Gains / KPI bénéfices ─── */
 .gain-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
   gap: var(--space-lg);
 }
 
@@ -216,7 +216,7 @@
 
 .dashboard-pro__kpis {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr));
   gap: var(--space-md);
   padding: var(--space-xl);
 }
@@ -530,7 +530,7 @@
 
 .testimonial-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: var(--space-lg);
   text-align: left;
 }
@@ -785,6 +785,11 @@
 
 /* ─── Mobile touch targets ─── */
 @media (max-width: 768px) {
+  .btn {
+    white-space: normal;
+    text-align: center;
+  }
+
   .btn--lg {
     width: 100%;
     min-height: 52px;
