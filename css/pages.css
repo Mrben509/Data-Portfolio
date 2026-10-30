@@ -698,3 +698,8 @@
 .legal-content p {
   margin-bottom: var(--space-md);
 }
+
+/* Les coordonnées et les actions restent lisibles sur petit écran. */
+.contact-info__content { min-width: 0; overflow-wrap: anywhere; }
+.contact-grid > * { min-width: 0; }
+.contact-grid .btn { white-space: normal; text-align: center; }

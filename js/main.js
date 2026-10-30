@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initAnimations();
   initAccordion();
   initContactForm();
-  initConversionAnimations();
-  initDashboardDemo();
+  if (typeof initConversionAnimations === 'function') initConversionAnimations();
+  if (typeof initDashboardDemo === 'function') initDashboardDemo();
   injectIcons();
 });
 

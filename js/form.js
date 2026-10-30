@@ -102,9 +102,8 @@ function buildSubmissionPayload(form) {
     Teléfono: phone || '—',
     'Solicitud / Mensaje': message,
     // Metadatos FormSubmit
-    _subject: 'Nueva solicitud de auditoría — ' + (name || 'Cliente'),
+    _subject: 'Nuevo mensaje del portafolio — ' + (name || 'Cliente'),
     _template: 'table',
-    _captcha: 'false',
     _replyto: email,
   };
 
@@ -135,6 +134,8 @@ function initContactForm() {
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (form.elements._gotcha.value) return;
+    form.querySelector('.form-success').classList.remove('visible');
 
     let isValid = true;
     const formData = new FormData(form);
@@ -174,7 +175,7 @@ function initContactForm() {
 
       const data = await response.json().catch(() => ({}));
 
-      if (response.ok && data.success !== 'false' && data.success !== false) {
+      if (response.ok && (data.success === 'true' || data.success === true)) {
         form.reset();
         successEl.classList.add('visible');
         setTimeout(() => successEl.classList.remove('visible'), 6000);

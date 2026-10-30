@@ -14,7 +14,9 @@ const SITE_CONFIG = {
   email: 'delarobia509@gmail.com',
   // Formato recomendado: +1 849 ... (República Dominicana)
   phone: '+1 849 515 1149',
-  linkedin: 'https://www.linkedin.com/company/datavision-analytics',
+  linkedin: 'https://www.linkedin.com/in/emmanuel-raoul-théophile-864090244',
+  github: 'https://github.com/Mrben509',
+  whatsapp: 'https://wa.me/18495151149',
   address: 'Entrada A Los Conucos, Playa Juan Dolio, República Dominicana',
   // FormSubmit — ID de formulario activado (reemplaza el email en claro)
   // Cada envío llega a delarobia509@gmail.com con los datos del cliente.
@@ -32,8 +34,7 @@ const SITE_CONFIG = {
   ],
 
   social: [
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/datavision-analytics', icon: 'linkedin' },
-    { label: 'Twitter', href: '#', icon: 'twitter' },
-    { label: 'GitHub', href: '#', icon: 'github' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/emmanuel-raoul-théophile-864090244', icon: 'linkedin' },
+    { label: 'GitHub', href: 'https://github.com/Mrben509', icon: 'github' },
   ],
 };

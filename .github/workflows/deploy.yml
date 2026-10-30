@@ -34,10 +34,17 @@ jobs:
         with:
           enablement: true
 
+      # Seuls les fichiers publics sont copiés : jamais la racine du dépôt.
+      - name: Préparer les fichiers publics
+        run: |
+          mkdir -p _site
+          cp -- *.html robots.txt sitemap.xml .nojekyll _site/
+          cp -R -- css js images _site/
+
       - name: Préparer l'artefact du site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
       - name: Déployer sur GitHub Pages
         id: deployment

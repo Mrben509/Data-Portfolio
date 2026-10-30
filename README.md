@@ -98,3 +98,20 @@ npx serve .
 - CSS3 (variables custom, Grid, Flexbox)
 - JavaScript vanilla (ES6+)
 - Aucune dépendance externe
+
+## Fichiers privés et publication
+
+`.gitignore` exclut les consignes AGENTS.md, la revue locale REVUE-PORTFOLIO.md,
+les réglages IDE, secrets locaux, dépendances, caches et journaux. Un fichier
+déjà suivi par Git reste suivi même s'il correspond à une règle d'exclusion.
+
+Le workflow publie uniquement les pages HTML, `css/`, `js/`, `images/`,
+`robots.txt`, `sitemap.xml` et `.nojekyll`, copiés dans `_site/`.
+La documentation reste versionnée mais n'est pas incluse dans le site déployé.
+Utiliser GitHub Actions comme source Pages pour bénéficier de cette sélection.
+
+Les coordonnées publiques et l'identifiant de destination FormSubmit sont
+visibles dans le JavaScript par conception ; ce ne sont pas des secrets API.
+La validation et le champ anti-spam côté navigateur ne remplacent pas les
+protections du prestataire. Le site ne force plus la désactivation du CAPTCHA.
+La réception effective des messages nécessite une vérification séparée.

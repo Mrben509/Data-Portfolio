@@ -1,0 +1,41 @@
+# Instructions et revues locales
+AGENTS.md
+REVUE-PORTFOLIO.md
+
+# Configuration des éditeurs et outils locaux
+.idea/
+.vscode/
+.codex/
+.agents/
+
+# Secrets et configuration privée
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+
+# Dépendances, caches et résultats générés
+node_modules/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+coverage/
+playwright-report/
+test-results/
+_site/
+dist/
+build/
+
+# Journaux, sauvegardes et fichiers système
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+.DS_Store
+Thumbs.db
