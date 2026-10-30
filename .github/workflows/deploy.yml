@@ -39,7 +39,9 @@ jobs:
         run: |
           mkdir -p _site
           cp -- *.html robots.txt sitemap.xml .nojekyll _site/
-          mkdir -p _site/css _site/images
+          mkdir -p _site/css _site/images _site/js
+          cp -R -- fr en _site/
+          cp -- js/preferences.js js/site.js _site/js/
           cp -- css/main.css _site/css/
           cp -- images/favicon.svg _site/images/
           cp -- Curriculum_Joinr.pdf _site/
