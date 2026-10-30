@@ -1,6 +1,4 @@
-# Assets
+# Ressources
 
-Ce dossier est réservé aux ressources statiques supplémentaires (polices locales, documents PDF, etc.).
-
-Les icônes sont gérées en SVG inline via `js/icons.js`.
-Le favicon se trouve dans `images/favicon.svg`.
+Le site utilise actuellement seulement `images/favicon.svg`, une icône personnelle
+avec les initiales « er ». Les CV PDF restent des sources locales exclues de Git.

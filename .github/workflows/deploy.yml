@@ -39,7 +39,10 @@ jobs:
         run: |
           mkdir -p _site
           cp -- *.html robots.txt sitemap.xml .nojekyll _site/
-          cp -R -- css js images _site/
+          mkdir -p _site/css _site/images
+          cp -- css/main.css _site/css/
+          cp -- images/favicon.svg _site/images/
+          cp -- Curriculum_Joinr.pdf _site/
 
       - name: Préparer l'artefact du site
         uses: actions/upload-pages-artifact@v3

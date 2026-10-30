@@ -1,238 +1,129 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Descubre nuestras realizaciones de análisis de datos para comerciantes y pymes en República Dominicana. Casos de estudio y demostraciones con resultados concretos.">
-  <meta property="og:title" content="Nuestras Realizaciones — DataVision Analytics">
-  <meta property="og:description" content="Ejemplos de análisis y tableros de control para comercios y pymes. Demostraciones ilustrativas.">
-  <meta property="og:locale" content="es_DO">
-  <title>Nuestras Realizaciones — DataVision Analytics</title>
-  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-  <link rel="canonical" href="https://mrben509.github.io/Data-Analytics-/realisations.html">
-  <link rel="stylesheet" href="css/main.css?v=20261029">
-  <script src="js/config.js?v=20261029"></script>
-  <script src="js/icons.js?v=20260720b"></script>
-  <script src="js/components.js?v=20261029"></script>
-  <script src="js/theme.js?v=20260720b"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Proyectos independientes: pipeline de Machine Learning, agente IA multimodelo y sistemas de backtesting. Contexto y contribución de Emmanuel Raoul Théophile.">
+<meta name="theme-color" content="#172c46">
+<title>Proyectos — Emmanuel Raoul Théophile</title>
+<link rel="canonical" href="https://mrben509.github.io/Data-Portfolio/realisations.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Proyectos — Emmanuel Raoul Théophile">
+<meta property="og:description" content="Proyectos independientes: pipeline de Machine Learning, agente IA multimodelo y sistemas de backtesting. Contexto y contribución de Emmanuel Raoul Théophile.">
+<meta property="og:url" content="https://mrben509.github.io/Data-Portfolio/realisations.html">
+<meta property="og:locale" content="es_DO">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="stylesheet" href="css/main.css?v=20261029b">
 </head>
 <body>
-  <div id="site-header"></div>
-
-  <main>
-    <section class="page-header">
-      <div class="container reveal">
-        <span class="section-label">Portafolio</span>
-        <h1>Nuestras <span class="text-gradient">realizaciones</span></h1>
-        <p>Ejemplos concretos de análisis y tableros de control realizados para comercios y pymes.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="demo-notice reveal">
-          ⚠️ Los proyectos presentados a continuación son demostraciones ilustrativas. Los datos y resultados son ficticios.
-        </div>
-
-        <div class="card-grid">
-          <div class="card project-card reveal">
-            <div class="project-card__chart mini-chart-line">
-              <svg viewBox="0 0 300 120" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.4"/>
-                    <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-                <path d="M0,90 L50,75 L100,80 L150,50 L200,45 L250,30 L300,20 L300,120 L0,120Z" fill="url(#g1)"/>
-                <polyline points="0,90 50,75 100,80 150,50 200,45 250,30 300,20" fill="none" stroke="#3B82F6" stroke-width="2"/>
-              </svg>
-            </div>
-            <div class="project-card__meta">
-              <span class="project-card__tag">Panadería-Repostería</span>
-              <span class="project-card__tag">Alimentos</span>
-            </div>
-            <h3>Optimización del mix de productos</h3>
-            <div class="project-card__section">
-              <h4>Problema</h4>
-              <p>Caída de margen en ciertos productos sin visibilidad sobre las causas. Gestión de inventario artesanal compleja.</p>
-            </div>
-            <div class="project-card__section">
-              <h4>Solución</h4>
-              <p>Análisis de rentabilidad por producto, identificación de horas pico y tablero de producción diaria.</p>
-            </div>
-            <div class="project-card__result">
-              <strong>Resultado:</strong> +15% de margen neto al reorientar la producción hacia los productos más rentables.
-            </div>
-          </div>
-
-          <div class="card project-card reveal reveal-delay-1">
-            <div class="project-card__chart">
-              <div class="chart-bars" style="height:100%;padding:1rem;">
-                <div class="chart-bar" style="height:60%;background:linear-gradient(180deg,#06B6D4,rgba(6,182,212,0.3))"></div>
-                <div class="chart-bar" style="height:80%;background:linear-gradient(180deg,#06B6D4,rgba(6,182,212,0.3))"></div>
-                <div class="chart-bar" style="height:45%;background:linear-gradient(180deg,#06B6D4,rgba(6,182,212,0.3))"></div>
-                <div class="chart-bar" style="height:90%;background:linear-gradient(180deg,#06B6D4,rgba(6,182,212,0.3))"></div>
-                <div class="chart-bar" style="height:70%;background:linear-gradient(180deg,#06B6D4,rgba(6,182,212,0.3))"></div>
-                <div class="chart-bar" style="height:95%;background:linear-gradient(180deg,#06B6D4,rgba(6,182,212,0.3))"></div>
-              </div>
-            </div>
-            <div class="project-card__meta">
-              <span class="project-card__tag">Tienda de moda</span>
-              <span class="project-card__tag">Textil</span>
-            </div>
-            <h3>Pronósticos estacionales</h3>
-            <div class="project-card__section">
-              <h4>Problema</h4>
-              <p>Exceso de inventario recurrente al final de temporada y quiebres en los best-sellers. Compras basadas en intuición.</p>
-            </div>
-            <div class="project-card__section">
-              <h4>Solución</h4>
-              <p>Modelo predictivo de ventas por colección, análisis de tendencias y alertas automáticas de reabastecimiento.</p>
-            </div>
-            <div class="project-card__result">
-              <strong>Resultado:</strong> -30% de inventario inactivo y +22% de ventas en productos de alta rotación.
-            </div>
-          </div>
-
-          <div class="card project-card reveal reveal-delay-2">
-            <div class="project-card__chart mini-chart-donut">
-              <svg viewBox="0 0 120 120" style="margin:auto;max-width:120px;">
-                <circle cx="60" cy="60" r="45" fill="none" stroke="#1e293b" stroke-width="14"/>
-                <circle cx="60" cy="60" r="45" fill="none" stroke="#3B82F6" stroke-width="14" stroke-dasharray="113 283" transform="rotate(-90 60 60)"/>
-                <circle cx="60" cy="60" r="45" fill="none" stroke="#06B6D4" stroke-width="14" stroke-dasharray="85 283" stroke-dashoffset="-113" transform="rotate(-90 60 60)"/>
-                <circle cx="60" cy="60" r="45" fill="none" stroke="#8B5CF6" stroke-width="14" stroke-dasharray="56 283" stroke-dashoffset="-198" transform="rotate(-90 60 60)"/>
-                <circle cx="60" cy="60" r="45" fill="none" stroke="#F59E0B" stroke-width="14" stroke-dasharray="29 283" stroke-dashoffset="-254" transform="rotate(-90 60 60)"/>
-              </svg>
-            </div>
-            <div class="project-card__meta">
-              <span class="project-card__tag">Colmado gourmet</span>
-              <span class="project-card__tag">Distribución</span>
-            </div>
-            <h3>Segmentación de clientes</h3>
-            <div class="project-card__section">
-              <h4>Problema</h4>
-              <p>Campañas de marketing genéricas con bajo retorno. Desconocimiento de los perfiles de compradores.</p>
-            </div>
-            <div class="project-card__section">
-              <h4>Solución</h4>
-              <p>Segmentación RFM, análisis del ticket promedio por perfil y recomendaciones de segmentación para promociones.</p>
-            </div>
-            <div class="project-card__result">
-              <strong>Resultado:</strong> +40% de tasa de respuesta en campañas de email segmentadas.
-            </div>
-          </div>
-
-          <div class="card project-card reveal reveal-delay-3">
-            <div class="project-card__chart mini-chart-line">
-              <svg viewBox="0 0 300 120" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.4"/>
-                    <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-                <path d="M0,100 L60,85 L120,70 L180,55 L240,40 L300,25 L300,120 L0,120Z" fill="url(#g2)"/>
-                <polyline points="0,100 60,85 120,70 180,55 240,40 300,25" fill="none" stroke="#8B5CF6" stroke-width="2"/>
-              </svg>
-            </div>
-            <div class="project-card__meta">
-              <span class="project-card__tag">Restaurante</span>
-              <span class="project-card__tag">Restauración</span>
-            </div>
-            <h3>Gestión multi-sucursal</h3>
-            <div class="project-card__section">
-              <h4>Problema</h4>
-              <p>Dificultad para comparar el rendimiento de 3 locales en Santo Domingo. Decisiones sin datos consolidados.</p>
-            </div>
-            <div class="project-card__section">
-              <h4>Solución</h4>
-              <p>Tablero unificado con KPIs por sucursal, análisis de horas valle/pico y benchmarking interno.</p>
-            </div>
-            <div class="project-card__result">
-              <strong>Resultado:</strong> Identificación de un 12% de ahorro potencial en costos operativos.
-            </div>
-          </div>
-
-          <div class="card project-card reveal reveal-delay-4">
-            <div class="project-card__chart">
-              <div class="chart-bars" style="height:100%;padding:1rem;">
-                <div class="chart-bar" style="height:40%;background:linear-gradient(180deg,#8B5CF6,rgba(139,92,246,0.3))"></div>
-                <div class="chart-bar" style="height:55%;background:linear-gradient(180deg,#8B5CF6,rgba(139,92,246,0.3))"></div>
-                <div class="chart-bar" style="height:70%;background:linear-gradient(180deg,#8B5CF6,rgba(139,92,246,0.3))"></div>
-                <div class="chart-bar" style="height:65%;background:linear-gradient(180deg,#8B5CF6,rgba(139,92,246,0.3))"></div>
-                <div class="chart-bar" style="height:85%;background:linear-gradient(180deg,#8B5CF6,rgba(139,92,246,0.3))"></div>
-                <div class="chart-bar" style="height:100%;background:linear-gradient(180deg,#8B5CF6,rgba(139,92,246,0.3))"></div>
-              </div>
-            </div>
-            <div class="project-card__meta">
-              <span class="project-card__tag">Farmacia</span>
-              <span class="project-card__tag">Salud</span>
-            </div>
-            <h3>Gestión de referencias</h3>
-            <div class="project-card__section">
-              <h4>Problema</h4>
-              <p>Catálogo de más de 2,000 referencias difícil de gestionar. Quiebres frecuentes en productos esenciales.</p>
-            </div>
-            <div class="project-card__section">
-              <h4>Solución</h4>
-              <p>Análisis ABC de referencias, cálculo de stocks de seguridad óptimos y reportes de alerta semanales.</p>
-            </div>
-            <div class="project-card__result">
-              <strong>Resultado:</strong> -45% de quiebres de stock en productos de alta rotación.
-            </div>
-          </div>
-
-          <div class="card project-card reveal reveal-delay-5">
-            <div class="project-card__chart mini-chart-line">
-              <svg viewBox="0 0 300 120" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.4"/>
-                    <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-                <path d="M0,80 L50,70 L100,75 L150,60 L200,50 L250,35 L300,25 L300,120 L0,120Z" fill="url(#g3)"/>
-                <polyline points="0,80 50,70 100,75 150,60 200,50 250,35 300,25" fill="none" stroke="#F59E0B" stroke-width="2"/>
-              </svg>
-            </div>
-            <div class="project-card__meta">
-              <span class="project-card__tag">E-commerce</span>
-              <span class="project-card__tag">Digital</span>
-            </div>
-            <h3>Optimización del embudo de conversión</h3>
-            <div class="project-card__section">
-              <h4>Problema</h4>
-              <p>Alta tasa de abandono de carrito (78%). Origen de las pérdidas de conversión desconocido.</p>
-            </div>
-            <div class="project-card__section">
-              <h4>Solución</h4>
-              <p>Análisis del recorrido del cliente, identificación de puntos de fricción y pruebas A/B en páginas clave.</p>
-            </div>
-            <div class="project-card__result">
-              <strong>Resultado:</strong> Tasa de conversión de 2.1% a 3.4% en 3 meses.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="cta-section reveal">
-          <h2>Tu proyecto podría ser el próximo</h2>
-          <p>Contáctanos para hablar de tus retos y descubrir cómo podemos ayudarte.</p>
-          <a href="contact.html" class="btn btn--primary btn--lg">Solicitar una cotización</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <div id="site-footer"></div>
-
-  <script src="js/animations.js?v=20260720b"></script>
-  <script src="js/accordion.js?v=20260720b"></script>
-  <script src="js/form.js?v=20261029"></script>
-  <script src="js/main.js?v=20261029"></script>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+<div class="container header-inner">
+<a class="brand" href="index.html" aria-label="Emmanuel Raoul Théophile, inicio">
+<span class="brand-mark" aria-hidden="true">er</span>
+<span>Emmanuel Raoul Théophile<small>Data Science &amp; IA aplicada</small>
+</span>
+</a>
+<nav aria-label="Navegación principal">
+<a href="index.html">Inicio</a>
+<a href="realisations.html" aria-current="page">Proyectos</a>
+<a href="services.html">Competencias</a>
+<a href="pourquoi-nous.html">Sobre mí</a>
+</nav>
+<a class="button" href="contact.html">Contactar</a>
+</div>
+</header>
+<main id="contenido">
+<section class="page-intro container">
+<h1>Mis proyectos</h1>
+<p class="lead">Trabajo independiente en Machine Learning, IA aplicada e investigación cuantitativa. Cada proyecto muestra mi contribución y el entregable desarrollado.</p>
+</section>
+<article class="project-detail container" id="pipeline-ml">
+<div class="project-title">
+<p class="project-domain">Series temporales y evaluación fuera de muestra</p>
+<h2>Pipeline de Machine Learning para series temporales</h2>
+<p class="tech">Python · pandas · NumPy · Scikit-learn · XGBoost · LightGBM · Optuna</p>
+</div>
+<div class="project-story">
+<h3>Contexto</h3>
+<p>Preparar datos históricos y evaluar modelos capaces de identificar patrones en series temporales financieras.</p>
+<h3>Mi contribución</h3>
+<p>Diseñé el flujo de preparación de datos, ingeniería de características y entrenamiento de clasificadores con XGBoost y LightGBM. Incorporé medidas de volatilidad, indicadores técnicos y puntuaciones Z.</p>
+<h3>Entregable y evaluación</h3>
+<p>Un pipeline de experimentación con ajuste de hiperparámetros mediante Optuna, tratamiento del desequilibrio entre clases y conjuntos separados de entrenamiento, validación y prueba.</p>
+</div>
+</article>
+<article class="project-detail container" id="agente-ia">
+<div class="project-title">
+<p class="project-domain">Integración de APIs y ejecución local</p>
+<h2>Agente de IA multimodelo</h2>
+<p class="tech">Python · OpenRouter · Mistral · Google AI Studio · Ollama · Markdown</p>
+</div>
+<div class="project-story">
+<h3>Contexto</h3>
+<p>Explorar cómo combinar modelos de lenguaje y servicios de IA en un flujo de trabajo técnico.</p>
+<h3>Mi contribución</h3>
+<p>Desarrollé un agente que integra APIs de OpenRouter, Mistral y Google AI Studio, junto con modelos locales ejecutados con Ollama. Organicé componentes y documenté aspectos técnicos en Markdown.</p>
+<h3>Entregable y evaluación</h3>
+<p>Un agente que permite experimentar con distintos modelos y opciones de ejecución, como base para automatizar tareas técnicas.</p>
+</div>
+</article>
+<article class="project-detail container" id="sistemas-algoritmicos">
+<div class="project-title">
+<p class="project-domain">Investigación cuantitativa y pruebas retrospectivas</p>
+<h2>Sistemas algorítmicos y backtesting</h2>
+<p class="tech">Python · MQL5 · MetaTrader 5 · Backtrader · Backtesting.py · LightGBM</p>
+</div>
+<div class="project-story">
+<h3>Contexto</h3>
+<p>Analizar el comportamiento histórico de estrategias basadas en reglas e indicadores.</p>
+<h3>Mi contribución</h3>
+<p>Desarrollé estrategias con reglas de análisis técnico y filtros de Machine Learning, mecanismos de gestión del riesgo y seguimiento dinámico de posiciones. Implementé sistemas en MQL5 y MetaTrader 5.</p>
+<h3>Entregable y evaluación</h3>
+<p>Sistemas y pruebas retrospectivas con Python, Backtrader y Backtesting.py para comparar comportamientos y detectar problemas.</p>
+</div>
+</article>
+<section class="section container">
+<h2>Más sobre mi trabajo</h2>
+<p>Puedes consultar mi perfil de GitHub o escribirme para hablar del enfoque técnico de estos proyectos.</p>
+<div class="actions">
+<a class="button secondary" href="https://github.com/Mrben509">Ver mi perfil de GitHub</a>
+</div>
+</section>
+<section class="contact-band container">
+<div>
+<h2>¿Un proyecto de datos o una oportunidad profesional?</h2>
+<p>Cuéntame el contexto, el objetivo y lo que necesitas de mí.</p>
+</div>
+<a class="button" href="contact.html">Contactar</a>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-top">
+<div>
+<a class="footer-name" href="index.html">Emmanuel Raoul Théophile</a>
+<p>Junior Data Scientist. Machine Learning,<br>IA aplicada y automatización con Python.</p>
+<p>San Pedro de Macorís, República Dominicana</p>
+</div>
+<div class="footer-contact">
+<h2>Hablemos</h2>
+<a href="mailto:raoulemmanuelt@gmail.com">raoulemmanuelt@gmail.com</a>
+<a href="https://wa.me/18495151149" target="_blank" rel="noopener noreferrer">WhatsApp Business: +1 849 515 1149</a>
+<div class="social-links">
+<a href="https://www.linkedin.com/in/emmanuel-raoul-théophile-864090244" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+<a href="https://github.com/Mrben509" target="_blank" rel="noopener noreferrer">GitHub</a>
+</div>
+</div>
+</div>
+<div class="container footer-bottom">
+<p>© 2026 Emmanuel Raoul Théophile</p>
+<div>
+<a href="tarifs.html">Colaboración</a>
+<a href="faq.html">Preguntas frecuentes</a>
+<a href="mentions-legales.html">Aviso del sitio</a>
+<a href="politique-confidentialite.html">Privacidad</a>
+</div>
+</div>
+</footer>
 </body>
 </html>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mrben509.github.io/Data-Analytics-/sitemap.xml
+Sitemap: https://mrben509.github.io/Data-Portfolio/sitemap.xml
